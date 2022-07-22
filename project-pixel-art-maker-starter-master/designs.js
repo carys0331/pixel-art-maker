@@ -26,3 +26,4 @@ function makeGrid() {
       tr.appendChild(td);
     }
   }
+}
