@@ -12,18 +12,25 @@ const size = document.getElementById ('sizePicker');
 size.addEventListener('submit', function(event) {
     event.preventDefault();
     makeGrid();
-})
+  });
 
 function makeGrid() {
   table.innerHTML = '';
   let tr,td;
   
   for (let row = 0; row < height; row++) {
-    const tr = document.createElement('tr');
+    tr = document.createElement('tr');
     table.appendChild(tr);
     for (let cell = 0; cell < width; cell++) {
-      const td = document.createElement('td');
-      tr.appendChild(td);
+        td = document.createElement('td');
+        tr.appendChild(td);
     }
   }
+  
+    table.addEventListener('click', function(event) {
+    event.preventDefault();
+    if (event.target.tagName === 'TD') {
+        event.target.style.backgroundColor = color;
+    }
+  });
 }
